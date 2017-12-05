@@ -28,13 +28,14 @@ public class Main {
      */
     public void startApp()
     {
+        bubbleSort();
+
         System.out.println("Input array:");
         printArr();
 
-        int val = 12;
+        int val = 5;
         int index  = binarySearch(val, 0, vArr.length-1, vArr);
         System.out.format("Index val: %d in Array is %d (begin from zero) \n", val, index);
-
     }
 
     /**
@@ -83,5 +84,21 @@ public class Main {
         vArr[i] = ii;
         vArr[j] = jj;
     }
+
+    /**
+     *  Algorithm bubble sort
+     */
+    private void bubbleSort() {
+        for (int i = vArr.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (vArr[j] > vArr[j+1]) {
+                    sortMagic(j, j+1);
+                }
+            }
+        }
+    }
+
+
+
 
 }
